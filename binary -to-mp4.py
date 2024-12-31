@@ -1,4 +1,4 @@
-mport pymongo
+import pymongo
 import gridfs
 import os
 from flask import Flask, Response
@@ -12,12 +12,12 @@ cluster = "test0.7df1d.mongodb.net"
 MONGO_URI = f"mongodb+srv://{username}:{password}@{cluster}/?retryWrites=true&w=majority&appName=Test0"
 
 # Connect to MongoDB
-client = pymongo.MongoClient(MONGO_URI)
+client = pymongo.MongoClient(MONGO_URI) 
 db = client["moto"]
 fs = gridfs.GridFS(db)
 
 # Retrieve the MP4 file from GridFS
-filename = "video_stearming"  # The filename stored in GridFS
+filename = "video_stearming"  #The filename stored in GridFS
 
 @app.route('/stream')
 def stream_video():
